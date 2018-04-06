@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="Simple file uploading">
+
+  <title>SportsFlashes Movie Festival</title>
+  
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/font/font.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="shortcut icon" href="images/circle.png">
+
+  <script>
+    var bucket_dir = "{{ bucket_dir }}";
+    var aws_key = "{{ aws_key }}";
+    var acl = "public-read";
+    var redirect = "{{ redirect_host }}";
+  </script>
+
+  <!-- GA -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36907732-2']);
+    _gaq.push(['_setDomainName', 'alfg.co']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <div id="drop" class="panel">
+    <div id="circle"></div>
+    
+
+    <h3>Please Select a File to Upload </h3>
+    
+
+    <form action="//{{ aws_bucket }}.{{ host }}" method="post" enctype="multipart/form-data" class="direct-upload">
+      <input type="hidden" name="key">
+      <input type="hidden" name="AWSAccessKeyId" value="{{ aws_key }}"> 
+      <input type="hidden" name="acl" value="public-read"> 
+      <input type="hidden" name="policy">
+      <input type="hidden" name="signature">
+      <input type="hidden" name="success_action_status" value="201">
+      <input type="hidden" name="Content-Type">
+
+      <input class="file-input" name="file" type="file">
+    </form>
+    <div class="progress round eight"><span class="meter"></span></div>
+    <input class="share-url" type="text" />
+  </div>
+
+  
+
+ 
+ 
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="javascripts/jquery.lettering.js"></script>
+  <script src="javascripts/jquery.ui.widget.js"></script>
+  <script src="javascripts/jquery.fileupload.js"></script>
+  <script src="javascripts/app.js"></script>
+
+  <script>
+      $(document).ready(function() {
+        $(".title").lettering();
+      });
+  </script> 
+  
+
+</body>
+</html>
