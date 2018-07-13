@@ -1,0 +1,22 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.tmp
+*.swp
+*.swo
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+.idea
+
+# Compiled CSS.
+public/stylesheets/app.css
+
