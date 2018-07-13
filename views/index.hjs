@@ -40,9 +40,11 @@
 
   <div id="drop" class="panel">
     <div id="circle"></div>
+    <h3>File Upload Panel</h3>
+ <img src="https://images.sportsflashes.com/1503554570-SF-Logo(1).png" alt="Smiley face" height="300" width="350">
+   
+   <h5>Please Select a File to Upload </h5>
     
-
-    <h3>Please Select a File to Upload </h3>
     
 
     <form action="//{{ aws_bucket }}.{{ host }}" method="post" enctype="multipart/form-data" class="direct-upload">
